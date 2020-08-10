@@ -1,4 +1,5 @@
 README.md
+src/coffee_main.db
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
