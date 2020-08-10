@@ -49,9 +49,9 @@ class CoffeeMachine:
 
     def coffee_choice(self):
         self.choice = ' '
-        while self.choice not in list(map(str, list(range(1,11)))):
-            self.choice = input("Choose your coffee: ")
-            if self.choice not in map(str, list(range(1,11))):
+        while self.choice not in cd.coffee_id:
+            self.choice = int(input("Choose your coffee: "))
+            if self.choice not in cd.coffee_id:
                 print('Invalid choice!')
         return int(self.choice)
 
