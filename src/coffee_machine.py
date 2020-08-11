@@ -1,15 +1,19 @@
 coin_dict = {'50':50,'100':100,'200':200,'500':500}
+
 import coffee_database as cd
 
 
 
 class CoffeeMachine:       
     
-    def __init__(self,customer_cash):        
-        self.customer_cash = customer_cash        
+    def __init__(self,customer_cash):
+        
+        self.customer_cash = customer_cash
+        
         if self.customer_cash < 50:
             print("You don't have enough money!")
-            exit()       
+            exit()
+       
         else:
             self.start()
 
@@ -21,6 +25,7 @@ class CoffeeMachine:
         print('  +-------------------------+')
         print('  |Coffee machine on standby|')     
         print('  +-------------------------+\n')
+
         print('+------------------------------+')            
         print("""|Coffee 1:  50 | Coffee 2: 100 |
 |--------------+---------------|
@@ -40,25 +45,33 @@ class CoffeeMachine:
         while self.coin not in self.coin_list:
             self.coin = input('Please insert a coin: ')
             if self.coin not in self.coin_list:
-                print('Invalid coin!')                
+                print('Invalid coin!')    
+            
             elif int(self.coin) > self.customer_cash:
                 print("You don't have enough resources.")
-                exit()        
-        return coin_dict[self.coin]
+                exit()
         
-
+        return coin_dict[self.coin]
+   
+        
+        
+        
     def coffee_choice(self):
         self.choice = ' '
-        while self.choice not in cd.coffee_id:
+        while self.choice not in list(range(1,11)):
             self.choice = int(input("Choose your coffee: "))
-            if self.choice not in cd.coffee_id:
+            if self.choice not in list(range(1,11)):
                 print('Invalid choice!')
-        return int(self.choice)
 
+        return self.choice
 
+      
+
+     
 class Customer:
     def __init__(self,cash):
         self.cash = cash
 
     def __str__(self):
         return f"I have {self.cash} $"
+

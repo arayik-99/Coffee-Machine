@@ -9,9 +9,11 @@ if __name__ == "__main__":
     menu = cmenu.CoffeeMenu()
     total_coin = 0
     return_coin = 0
+
     
     def ask_coin():
-        global total_coin        
+        global total_coin
+        
         main_coin = coffee_machine.coin_input()        
         customer.cash -= main_coin
         total_coin += main_coin
@@ -22,7 +24,7 @@ if __name__ == "__main__":
         global total_coin, return_coin
         main_choice = coffee_machine.coffee_choice()        
         menu.coffee_io(main_choice,total_coin)
-        if menu.is_low() == True:
+        if menu.is_low(main_choice) == True:
             print("Not enough resources to make the coffee!")
             exit()
         else:        
@@ -74,4 +76,4 @@ if __name__ == "__main__":
                 coin_input = False
             
 
-    main()    
+    main()
