@@ -1,10 +1,7 @@
 coin_dict = {'50':50,'100':100,'200':200,'500':500}
 import coffee_database as cd
 
-
-
-class CoffeeMachine:       
-    
+class CoffeeMachine:           
     def __init__(self,customer_cash):        
         self.customer_cash = customer_cash        
         if self.customer_cash < 50:
